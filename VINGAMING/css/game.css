@@ -1,0 +1,70 @@
+@font-face {
+    font-family: Fonts1; /* Гарнитура шрифта */
+    src: url(../fonts/Bold.ttf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: Fonts2; /* Гарнитура шрифта */
+    src: url(../fonts/10605.ttf); /* Путь к файлу со шрифтом */
+}
+
+#lable{
+    font-size: 64px;
+    font-family: Fonts1;
+}
+
+.information {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    border-radius: 5px;
+    padding-top: 5px;
+}
+
+#num{
+    margin-right: 10px;
+    font-family: Fonts2;
+}
+
+
+.information input[type="number"] {
+    padding: 7px 5px;
+    margin: 10px 10px;
+    width: 40%;
+    display: inline;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+}
+
+.information input[type="submit"] {
+    background: #1abc9c;
+    padding: 10px;
+    font-size: 20px;
+    display: block;
+    width: 100%;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.infoBlock {
+    padding: 10px;
+}
+
+#canvas{
+    background-color: burlywood;
+    border-radius: 15px;
+
+    background: #bbaaa1;
+    text-align: center;
+    font-weight: bold;
+    z-index: 20;
+
+    font-size: 55px;
+}
+
+#canvas-block{
+    margin-left: -250px;
+    padding-left: 50%;
+}
