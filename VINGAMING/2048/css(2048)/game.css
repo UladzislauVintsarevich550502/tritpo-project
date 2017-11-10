@@ -1,10 +1,10 @@
 @font-face {
     font-family: Fonts1; /* Гарнитура шрифта */
-    src: url(../fonts/Bold.ttf); /* Путь к файлу со шрифтом */
+    src: url(../../resource/font/Bold.ttf); /* Путь к файлу со шрифтом */
 }
 @font-face {
     font-family: Fonts2; /* Гарнитура шрифта */
-    src: url(../fonts/10605.ttf); /* Путь к файлу со шрифтом */
+    src: url(../../resource/font/10605.ttf); /* Путь к файлу со шрифтом */
 }
 
 #lable{

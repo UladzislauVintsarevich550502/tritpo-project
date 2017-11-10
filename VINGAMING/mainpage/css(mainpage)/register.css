@@ -1,7 +1,8 @@
 .register {
-    position: relative;
+    position: absolute;
     width: 1250px;
     display: none;
+    z-index: 1;
 }
 
 .registerArrow-up {
@@ -41,7 +42,7 @@
     box-shadow: 0 0 1px 1px #1abc9c;
 }
 
-.registerFormholder input[type="button"] {
+.registerFormholder input[type="registerSubmit"] {
     background: #1abc9c;
     padding: 10px;
     font-size: 20px;
@@ -52,7 +53,7 @@
     border-radius: 5px;
 }
 
-.registerFormholder input[type="button"]:hover {
+.registerFormholder input[type="registerSubmit"]:hover {
     background: #1bc6a4;
 }
 

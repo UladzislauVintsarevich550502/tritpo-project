@@ -1,0 +1,40 @@
+/* ANIMATION */
+@keyframes cycle {
+	0%  { top: 0px; } /* При запуске слайдера, первое изображение уже видимо */
+	4%  { top: 0px; } /* Стартовая позиция */
+	29% { top: 0px; opacity:1; z-index:0; } /* С 4% до 29 % (3 секунды) изображение видимо */
+	33% { top: 325px; opacity: 0; z-index: 0; } /* с 29% до 33% (1 секунды)выход изображения*/
+	34% { top: -325px; opacity: 0; z-index: -1; } /* Возвращение на исходную позицию за пределами маски */
+	92% { top: -325px; opacity: 0; z-index: 0; }
+	96% { top: -325px; opacity: 0; } /* С 96% до 100% (1 секунда) – вход */
+	100%{ top: 0px; opacity: 1; }
+}
+
+@keyframes cycletwo {
+	0%  { top: -325px; opacity: 0; } /* Исходная позиция за пределами маски */
+	29% { top: -325px; opacity: 0; }/* Начало движения с 29% */
+	33% { top: 0px; opacity: 1; }
+	37% { top: 0px; opacity: 1; }  /* С 33% до 37% (в течении 1 секунды) — вход*/
+	62% { top: 0px; opacity: 1; z-index: 0; }   /* С 37% до 62 % (3 секунды) изображение видимо */
+	66% { top: 325px; opacity: 0; z-index: 0; } /* С 62% до 66% (1 секунда)— выход */
+	67% { top: -325px; opacity: 0; z-index: -1; }   /* Возврат на исходную позицию */
+	100%{ top: -325px; opacity: 0; z-index: -1; }
+}
+
+@keyframes cyclethree {
+	0%  { top: -325px; opacity: 0; }
+	62% { top: -325px; opacity: 0; }
+	66% { top: 0px; opacity: 1; }
+	70% { top: 0px; opacity: 1; }
+	96% { top: 0px; opacity: 1; z-index: 0; }
+	100%{ top: 325px; opacity: 0; z-index: 0; }
+}
+
+/* ANIMATION BAR */
+@keyframes fullexpand {
+    0%, 33%, 66%, 100%{ width:0%; opacity:0; }
+    4%, 37%, 70% { width:0%; opacity:0.3; }
+   33%, 62%, 96% { width:100%; opacity:0.7; }
+   34%, 63%, 97% { width:100%; opacity:0.3; }
+   35%, 64%, 98% { width:100%; opacity:0; }
+}

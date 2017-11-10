@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="rus">
+<head>
+    <meta charset="UTF-8">
+    <title>2048</title>
+    <link rel="stylesheet" href="../mainpage/css(mainpage)/login.css">
+    <link rel="stylesheet" href="../window/window.css">
+    <link rel="stylesheet" href="../mainpage/css(mainpage)/register.css">
+    <link rel="stylesheet" href="../mainpage/css(mainpage)/style.css"/>
+</head>
+
+<body>
+
+<div id="wrap">
+    <div id="regbar">
+        <div id="navthing">
+
+            <h2><a href="#" id="loginForm">Login</a> | <a href="#" id="registerForm">Register</a></h2>
+
+            <div class="login">
+                <div class="loginArrow-up"></div>
+                <div class="loginFormholder">
+                    <div class="loginRandompad">
+                        <fieldset>
+                            <label name="loginEmail">Email</label>
+                            <input type="loginEmail" value="example@example.com"/>
+                            <label name="loginPassword">Password</label>
+                            <input type="loginPassword"/>
+                            <input type="loginSubmit" value="Login"/>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+
+            <div class="register">
+                <div class="registerArrow-up"></div>
+                <div class="registerFormholder">
+                    <div class="registerRandompad">
+                        <fieldset>
+                            <label name="registerName">Name</label>
+                            <input type="registerName" value="Влад"/>
+                            <label name="registerSurname">Surname</label>
+                            <input type="registerSurname" value="Винцаревич"/>
+                            <label name="registerEmail">Email</label>
+                            <input type="registerEmail" value="example@example.com"/>
+                            <label name="registerPassword">Password</label>
+                            <input type="registerPassword"/>
+                            <input type="registerSubmit" value="Register"/>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div id="content-slider">
+                    <div id="slider">
+                        <div id="mask">
+                            <ul>
+                                <li id="first" class="firstanimation">
+                                    <a href="2048_main.html">
+                                        <img src="../resource/images/img_1.jpg"/>
+                                    </a>
+                                    <div class="tooltip">
+                                        <h1>2048</h1>
+                                    </div>
+                                </li>
+
+                                <li id="second" class="secondanimation">
+                                    <a href="#">
+                                        <img src="../resource/images/img_2.jpg"/>
+                                    </a>
+                                    <div class="tooltip">
+                                        <h1>Сапер</h1>
+                                    </div>
+                                </li>
+
+                                <li id="third" class="thirdanimation">
+                                    <a href="#">
+                                        <img src="../resource/images/img_3.jpg"/>
+                                    </a>
+                                    <div class="tooltip">
+                                        <h1>Крестики-нолики</h1>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="progress-bar"></div>
+                        <div id="pictures">
+                            <a href="2048_main.html">
+                                <img src="../resource/images/img_1.jpg" width="223.5" height="106"/>
+                            </a>
+                            <a href="#">
+                                <img src="../resource/images/img_2.jpg" width="223" height="106"/>
+                            </a>
+                            <a href="#">
+                                <img src="../resource/images/img_3.jpg" width="224.5" height="106"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="../mainpage/js(mainpage)/login.js"></script>
+<script src="../mainpage/js(mainpage)/register.js"></script>
+</html>
