@@ -2,4 +2,4 @@
 
 Требования к проекту находяться в файле Requirements.pdf
 
-Мокапы к проекту находятся в файлах: "mainpage.png", "Login.png", "Registration.png", "nules.png", "2048.png", "saper.png"
+Мокапы к проекту находятся в папке Mockups в файлах: "mainpage.png", "Login.png", "Registration.png", "nules.png", "2048.png", "saper.png"
