@@ -17,7 +17,7 @@ var o = 5;
 start();
 
 function start() {
-    if (sizeInput.value >= 2 && sizeInput.value <= 10) {
+    if (sizeInput.value >= 2 && sizeInput.value <= 7) {
         size = sizeInput.value;
         o = c * 2 / Math.sqrt(size);
         radius = r * 2 / Math.sqrt(size);
@@ -176,6 +176,7 @@ function pasteNewCell() {
         var coll = Math.floor(Math.random() * size);
         if (!cells[row][coll].value) {
             cells[row][coll].value = 2 * Math.ceil(Math.random() * 2);
+            canvasClean();
             drawAllCells();
             return;
         }

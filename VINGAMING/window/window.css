@@ -11,7 +11,8 @@ body {
 }
 
 #wrap {
-    margin: 0 auto 30px;
+    margin: 0 auto 15px;
+    width: 100%;
 }
 
 #regbar {
@@ -20,7 +21,7 @@ body {
 }
 
 #navthing {
-    margin-left: 50px;
+    margin-left: 25px;
 }
 
 h1{
@@ -28,7 +29,7 @@ h1{
 }
 
 h2 {
-    padding: 20px;
+    padding-top: 20px;
     color: #ecf0f1;
 }
 

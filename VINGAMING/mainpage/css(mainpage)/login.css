@@ -39,17 +39,19 @@
   outline: none;
   box-shadow: 0 0 1px 1px #1abc9c;
 }
-.loginFormholder input[type="loginSubmit"] {
+.loginFormholder input[type="submit"] {
   background: #1abc9c;
+  margin-left: 0;
+  margin-top: 10px;
   padding: 10px;
   font-size: 20px;
   display: block;
-  width: 93%;
+  width: 50%;
   border: none;
   color: #fff;
   border-radius: 5px;
 }
-.loginFormholder input[type="loginSubmit"]:hover {
+.loginFormholder input[type="submit"]:hover {
   background: #1bc6a4;
 }
 

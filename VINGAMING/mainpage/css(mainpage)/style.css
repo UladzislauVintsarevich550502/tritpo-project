@@ -17,7 +17,7 @@
 
 #pictures{
 	width: 100%;
-	height: 106px;
+	height: 159px;
 	background-color: #1bc6a4;
 }
 
@@ -26,7 +26,7 @@
 	background-color: #1bc6a4;
 	border:5px solid #1bc6a4;
 	box-shadow:1px 1px 5px #1bc6a4;
-	height:431px;
+	height:483px;
 	width:680px;
 	margin:40px auto 0;
 	overflow:visible;
@@ -53,15 +53,11 @@
 }
 
 #slider li.firstanimation {
-	animation: cycle 20s linear infinite;
+	animation: cycle 15s linear infinite;
 }
 
 #slider li.secondanimation {
-	animation: cycletwo 20s linear infinite;
-}
-
-#slider li.thirdanimation {
-	animation: cyclethree 20s linear infinite;
+	animation: cycletwo 15s linear infinite;
 }
 
 #slider .tooltip {
@@ -99,5 +95,5 @@
 	width:680px; 
 	height:5px;
 	background:#000;
-	animation:fullexpand 20s ease-out infinite;
+	animation:fullexpand 15s ease-out infinite;
 }
