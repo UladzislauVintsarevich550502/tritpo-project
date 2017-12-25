@@ -234,7 +234,7 @@ function MinesweeperMap(ops) {
     _m.win = function () {
         $.ajax({
             type: "post",
-            url: "../../php_include/saveStatistic.php",
+            url: "../php_include/saveStatistic.php",
             data: "type=victorySapper",
             dataType: "html",
             cache: false,
@@ -248,6 +248,15 @@ function MinesweeperMap(ops) {
         overlay.className = 'overlay victory';
         overlay.innerHTML = '<span>' + _m.totalTime + '</span>';
         $1('map').appendChild(overlay);
+        var cooldown  = 1000;
+        setTimeout(function () {
+            if (overlay) {
+                overlay.className = 'overlay victory re';
+                overlay.addEventListener('click', function () {
+                    make(modeName);
+                }, false);
+            }
+        }, cooldown);
         $1('timer1').innerHTML = _m.totalTime;
         $1('map').className = 'win';
         // save
@@ -290,9 +299,9 @@ function MinesweeperMap(ops) {
         }
         var overlay = document.createElement('div');
         overlay.className = 'overlay gameover';
-        if (_m.width < 100) {
+        if (_m.width < 10) {
             overlay.innerHTML = '<span></span>';
-        }else {
+        } else {
             overlay.innerHTML = '<span>TRY AGAIN</span>';
         }
         $1('map').appendChild(overlay);
@@ -307,7 +316,7 @@ function MinesweeperMap(ops) {
 
         $.ajax({
             type: "post",
-            url: "../../php_include/saveStatistic.php",
+            url: "../php_include/saveStatistic.php",
             data: "type=looserSapper",
             dataType: "html",
             cache: false,

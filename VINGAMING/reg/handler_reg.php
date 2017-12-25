@@ -9,15 +9,15 @@ $surname = mb_convert_encoding($dataBase->clear_string($dataBase->getLink(), $_P
 $name = mb_convert_encoding($dataBase->clear_string($dataBase->getLink(), $_POST['registerName']), "UTF-8");
 $email = mb_convert_encoding($dataBase->clear_string($dataBase->getLink(), $_POST['registerEmail']), "UTF-8");
 if (!preg_match("/^(?:[a-z0-9]+(?:[-_.]?[a-z0-9]+)?@[a-z0-9_.-]+(?:\.?[a-z0-9]+)?\.[a-z]{2,5})$/i", trim($login))) {
-    $error[] = "Укажите корректный Логин!";
+    $error[] = "Please enter a valid Login!";
 } else {
     $result = mysqli_query($dataBase->getLink(), "SELECT login FROM client WHERE login = '$login'");
     if (mysqli_num_rows($result) > 0)
-        $error[] = "Логин занят!";
+        $error[] = "Login is busy!";
 }
-if (strlen($password) < 7 or strlen($password) > 15) $error[] = "Укажите Пароль от 7 до 15 символов!";
-if (strlen($surname) < 3 or strlen($surname) > 20) $error[] = "Укажите Фамилию от 3 до 15 символов!";
-if (strlen($name) < 3 or strlen($name) > 15) $error[] = "Укажите Имя от 3 до 15 символов!";
+if (strlen($password) < 7 or strlen($password) > 15) $error[] = "Enter a password from 7 to 15 characters!";
+if (strlen($surname) < 3 or strlen($surname) > 20) $error[] = "Specify the last name from 3 to 15 characters!";
+if (strlen($name) < 3 or strlen($name) > 15) $error[] = "Specify a name from 3 to 15 characters!";
 if (!preg_match("/^(?:[a-z0-9]+(?:[-_.]?[a-z0-9]+)?@[a-z0-9_.-]+(?:\.?[a-z0-9]+)?\.[a-z]{2,5})$/i", trim($email))) $error[] = "Укажите корректный email!";
 if (count($error))
     echo implode('<br />', $error);

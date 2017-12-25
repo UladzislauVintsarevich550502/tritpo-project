@@ -1,6 +1,7 @@
 .register {
     position: absolute;
     width: 1250px;
+    margin-top: 15px;
     display: none;
     z-index: 1;
 }

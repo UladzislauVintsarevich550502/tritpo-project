@@ -2,7 +2,6 @@
 include_once("../php_include/database_connect.php");
 include_once("../php_include/auth_cookie.php");
 include_once("../php_include/auth.php");
-$dataBase = DataBase::getDB();
 if (!session_id()) @ session_start();
 if (isset($_SESSION['auth']))
     if ($_SESSION['auth'] == 'yes_auth')
@@ -18,6 +17,7 @@ if (isset($_SESSION['auth']))
     <link rel="stylesheet" href="../2048/css(2048)/game.css">
     <link rel="stylesheet" href="../mainpage/css(mainpage)/login.css">
     <link rel="stylesheet" href="../mainpage/css(mainpage)/register.css">
+    <link rel="stylesheet" href="../mainpage/css(mainpage)/score.css">
     <script type="text/javascript" src="../js_include/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="../js_include/jquery.form.js"></script>
     <script type="text/javascript" src="../js_include/jquery.validate.js"></script>
@@ -53,33 +53,38 @@ if (isset($_SESSION['auth']))
                 },
                 messages: {
                     "registerEmail": {
-                        required: "Укажите вашу почту!",
-                        minlength: "От 5 до 15 символов!",
-                        maxlength: "От 5 до 15 символов!",
-                        remote: "Логин занят!"
+                        required: "\n" +"Enter your email!",
+                        minlength:
+                            "5 to 15 characters!",
+                        maxlength:
+                            "5 to 15 characters!",
+                        remote:
+                            "Login is busy!"
                     },
                     "registerPassword": {
-                        required: "Укажите Пароль!",
-                        minlength: "От 10 до 25 символов!",
-                        maxlength: "От 10 до 25 символов!"
+                        required:
+                            "Enter Password!",
+                        minlength:  "10 to 25 characters!",
+                        maxlength:  "10 to 25 characters!"
                     },
                     "registerName": {
                         required: "Укажите ваше Имя!",
-                        minlength: "От 3 до 20 символов!",
-                        maxlength: "От 3 до 20 символов!"
+                        minlength:  "3 to 20 characters!",
+                        maxlength: "3 to 20 characters!"
                     },
                     "registerSurname": {
-                        required: "Укажите вашу Фамилию!",
-                        minlength: "От 3 до 15 символов!",
-                        maxlength: "От 3 до 15 символов!"
+                        required: "Enter your Last Name!",
+                        minlength: "3 to 15 characters!",
+                        maxlength: "3 to 15 characters!"
                     },
                 },
                 submitHandler: function (form) {
                     $(form).ajaxSubmit({
                         success: function (data) {
                             if (data == 'true')
-                                $(".register").html("Успешная регистрация");
-                        }
+                                $(".register").html(
+                                    "Successful registration");
+                    }
                     });
                 }
             });
@@ -105,7 +110,7 @@ $page_header->name("2048");
         <canvas id="canvas" width="500" height="500"></canvas>
 
     </div>
-    <a href="main.php"><input id="cSize" type="submit" value="В главное меню"/></a>
+    <a href="main.php"><input id="cSize" type="submit" value="To the main menu"/></a>
 </div>
 
 
@@ -114,5 +119,6 @@ $page_header->name("2048");
 <script src="../2048/js(2048)/game.js"></script>
 <script src="../mainpage/js(mainpage)/login.js"></script>
 <script src="../mainpage/js(mainpage)/register.js"></script>
+<script src="../mainpage/js(mainpage)/score.js"></script>
 </body>
 </html>

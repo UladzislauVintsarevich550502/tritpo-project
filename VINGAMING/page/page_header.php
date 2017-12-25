@@ -11,55 +11,49 @@ class page_header
         <div id="navthing">';
         if (isset($_SESSION['auth'])) {
             if ($_SESSION['auth'] == 'yes_auth') {
-                echo '<h2><a href="#"> ' . $_SESSION['auth_name'] . '</a> | <a href="#" id="logout">Выход</a>';
+                echo '<h2><a href="#"> ' . $_SESSION['auth_name'] . '</a> | <a href="#" id="logout">Exit</a>';
                 if ($name_of_the_game != "main_page") {
                     echo "<span style='font-family:Fonts1;margin-left: 35%'>$name_of_the_game</span>";
-                    if ($name_of_the_game != "sapper") {
+                    if ($name_of_the_game != "SAPPER") {
                         if (isset($_SESSION['auth']))
                             if ($_SESSION['auth'] == 'yes_auth') {
-                                $login = $_SESSION['auth_login'];
-                                $query = mysqli_query($dataBase->getLink(), "SELECT win_2048 FROM client WHERE login = '$login'");
-                                $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
-                                $result = $row['win_2048'];
-                                $query = mysqli_query($dataBase->getLink(), "SELECT loose_2048 FROM client WHERE login = '$login'");
-                                $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
-                                $result1 = $row['loose_2048'];
-                                echo '<span id = " record" style="float: right;margin-right: 20px">
-                                    Victories :' . $result . '   Losses :' . $result1 . '</h2>
-                                </span>
+                                echo '<span id = " record" style="float: right;margin-right: 5%"><a href="#" id="scoreForm" onmouseenter="setName(2048)">Score</a>
+                                </span></h2>
                                 ';
                             }
                     } else {
                         if (isset($_SESSION['auth']))
                             if ($_SESSION['auth'] == 'yes_auth') {
-                                $login = $_SESSION['auth_login'];
-                                $query = mysqli_query($dataBase->getLink(), "SELECT win_sapper FROM client WHERE login = '$login'");
-                                $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
-                                $result = $row['win_sapper'];
-                                $query = mysqli_query($dataBase->getLink(), "SELECT loose_sapper FROM client WHERE login = '$login'");
-                                $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
-                                $result1 = $row['loose_sapper'];
-                                echo '<span id = " record" style="float: right;margin-right: 20px">
-                                    Victories :' . $result . '   Losses :' . $result1 . '</h2>
-                                </span>
+                                echo '<span id = " record" style="float: right;margin-right: 5%"><a href="#" id="scoreForm" onmouseenter="setName(1)">Score</a>
+                                </span></h2>
                                 ';
                             }
                     }
                 }
             }
         } else {
+            echo '<h2 id="Registr"><a href="#" id="loginForm">Login</a> | <a href="#" id="registerForm">Register</a>';
             if ($name_of_the_game == "main_page")
-                echo '<h2 id="Registr"><a href="#" id="loginForm">Login</a> | <a href="#" id="registerForm">Register</a></h2>';
+                echo "<span style='font-family:Fonts1;margin-left: 35%'>Main Page</span></h2>";
             else {
-                echo '<h2 id="Registr"><a href="#" id="loginForm">Login</a> | <a href="#" id="registerForm">Register</a></h2>';
-                echo "<span style='font-family:Fonts1;margin-left: 35%'>$name_of_the_game</span>";
-                if (isset($_SESSION['auth']))
-                    if ($_SESSION['auth'] == 'yes_auth') {
-                        $login = $_SESSION['auth_login'];
-                    }
+                echo "<span style='font-family:Fonts1;margin-left: 35%'>$name_of_the_game</span></h2>";
             }
         }
-        echo '
+
+                echo '
+            <div class="score" onclick="set2048Score()">
+                <div class="scoreArrow-up"></div>
+                <div class="scoreFormholder">
+                    <div class="scoreRandompad">
+                        <fieldset>
+                            <label type="winLabel">Number of victories:</label>
+                            <label type="numberOfWin" id = "win">1111</label>
+                            <label type = "looseLabel">Number of defeats:</label>
+                            <label type="numberOfLoose" id = "loose">2222</label>
+                         </fieldset>
+                    </div>
+                </div>
+            </div>
             <form method="post">
                 <div class="login">
                     <div class="loginArrow-up"></div>
@@ -70,8 +64,7 @@ class page_header
                                 <input type="loginEmail" value="example@example.com" id="loginEmail"/>
                                 <label name="loginPassword">Password</label>
                                 <input type="loginPassword" value="1234567890" id="loginPassword"/>
-                                <input type="checkbox" name="remember_me"><label for="remember_me">Запомнить
-                                    меня</label></li>
+                                <input type="checkbox" name="remember_me"><label for="remember_me">Remember me</label></li>
                                 <p align="right" id="button_auth"><input type="submit" value="Enter"></p>
                             </fieldset>
                         </div>

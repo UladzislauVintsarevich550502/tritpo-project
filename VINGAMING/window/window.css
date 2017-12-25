@@ -16,6 +16,7 @@ body {
 }
 
 #regbar {
+    width: 100%;
     height: 67px;
     background: #34495e;
 }
@@ -24,12 +25,12 @@ body {
     margin-left: 25px;
 }
 
-h1{
+h1 {
     text-align: center;
 }
 
 h2 {
-    padding-top: 20px;
+    padding-top: 15px;
     color: #ecf0f1;
 }
 

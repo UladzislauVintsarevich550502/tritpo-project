@@ -4,7 +4,7 @@
 
 #map {
     text-align: center;
-    border: 48px solid #eeeeee;
+    border: 48px solid #31ffd1;
     border-right-width: 80px;
     border-left-width: 80px;
     position: relative;
@@ -100,11 +100,11 @@
 }
 
 #map .x7 {
-    color: gray;
+    color: #550f69;
 }
 
 #map .x8 {
-    color: black;
+    color: #550f69;
 }
 
 #map .tile:hover {
@@ -125,8 +125,8 @@
 }
 
 #map .tile.flag {
-    color: black;
-    text-shadow: 1px 1px 1px white; /* lags Mozilla */
+    color: #550f69;
+    text-shadow: 1px 1px 1px #550f69; /* lags Mozilla */
 }
 
 #map .tile.wrong {
@@ -196,6 +196,15 @@
     text-shadow: -2px 1px 3px hsla(195, 60%, 15%, 1);
 }
 
+#map .victory.re {
+    color: hsla(35, 80%, 98%, 0.65);
+    cursor: pointer;
+}
+
+#map .victory.re:hover {
+    cursor: pointer;
+}
+
 #map .gameover.re {
     color: hsla(35, 80%, 98%, 0.65);
     cursor: pointer;
@@ -210,17 +219,19 @@
     display: inline-block;
     text-decoration: none;
     padding: 0.2em 0.4em;
-    color: darkblue;
+    color: #31ffd1;
+    font-family: Fonts2;
+    font-size: 20px;
 }
 
 .menu a:target {
-    background: #eeeeee;
-    color: black;
+    background: #31ffd1;
+    color: #550f69;
 }
 
 .menu a b {
     display: none;
-    color: black;
+    color: #550f69;
     vertical-align: bottom;
     font-size: 11pt;
     line-height: 17px;
@@ -244,7 +255,7 @@
 
 .menu a:hover,
 .menu a:active {
-    color: blue;
+    color: #31ffd1;
     text-decoration: underline;
 }
 
@@ -272,7 +283,7 @@
 .menu, #hud {
     font-size: 11pt;
     line-height: 13pt;
-    color: #d3d5d7;
+    color: #31ffd1;
 }
 
 #hud #bug {
@@ -286,7 +297,7 @@
 
 #hud #bug:hover {
     background: pink;
-    color: black;
+    color: #550f69;
 }
 
 #if-browser div {
@@ -301,30 +312,34 @@
 }
 
 .about {
+    font-family: Fonts1;
+    font-size: 20px;
     position: absolute;
     top: -35px;
     left: 0px;
     width: 100%;
 
-    color: #b0b0b0;
+    color: #550f69;
 }
 
 .about2 {
+    font-family: Fonts1;
+    font-size: 20px;
     position: absolute;
     bottom: -35px;
     left: 0px;
     width: 100%;
-    color: #b0b0b0;
+    color: #550f69;
 }
 
 #map #old_browser {
     padding: 1em;
     font-weight: bold;
-    color: gray;
+    color: #550f69;
 }
 
 #map:hover #old_browser {
-    color: black;
+    color: #550f69;
 }
 
 #map #old_browser a {
@@ -345,18 +360,20 @@
 #counter-sandbox:before {
     content: '|';
     display: block;
-    position: absolute;
+    visibility: hidden;
     width: 2px; /* test */
     height: 1em;
-    background: white;
-    color: white;
+    background: #31ffd1;
+    color: #31ffd1;
     overflow: hidden;
 }
 
 #counter-sandbox a {
     cursor: default !important;
+    font-family: Sans-serif;
 }
 
 #counter-sandbox img[src*="file://static.getclicky.com"] {
     display: none;
+    font-family: Sans-serif;
 }

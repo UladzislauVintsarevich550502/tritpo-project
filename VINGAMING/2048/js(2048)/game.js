@@ -11,6 +11,7 @@ var width = canvas.width / size;
 var cells = [];
 var fontSize;
 var loss = false;
+var win = false;
 var c = 5;
 var o = 5;
 
@@ -21,7 +22,7 @@ function start() {
         size = sizeInput.value;
         o = c * 2 / Math.sqrt(size);
         radius = r * 2 / Math.sqrt(size);
-        width = canvas.width / size - 2*o/size;
+        width = canvas.width / size - 2 * o / size;
         console.log(sizeInput.value);
         canvasClean();
         startGame();
@@ -62,6 +63,7 @@ function createCells() {
 
 function drawCell(cell) {
     ctx = roundedRect(cell.x, cell.y);
+    var i=0;
     switch (cell.value) {
         case 0 :
             ctx.fillStyle = '#cbc0b5';
@@ -98,6 +100,7 @@ function drawCell(cell) {
             break;
         case 2048 :
             ctx.fillStyle = '#FF7F50';
+            i++;
             break;
         case 4096 :
             ctx.fillStyle = '#ffbf00';
@@ -113,6 +116,7 @@ function drawCell(cell) {
         ctx.textAlign = 'center';
         ctx.fillText(cell.value, cell.x + width / 2, cell.y + width / 2 + width / 7);
     }
+    return i;
 }
 
 function canvasClean() {
@@ -145,15 +149,46 @@ function startGame() {
 
 function finishGame() {
     canvas.style.opacity = '0.5';
-    loss = true;
+    if (win) {
+        alert("Вы победили");
+        $.ajax({
+            type: "post",
+            url: "../php_include/saveStatistic.php",
+            data: "type=victory2048",
+            dataType: "html",
+            cache: false,
+            success: function (data) {
+            }
+        });
+    } else {
+        if (loss) {
+            alert("Вы проиграли");
+            $.ajax({
+                type: "post",
+                url: "../php_include/saveStatistic.php",
+                data: "type=loose2048",
+                dataType: "html",
+                cache: false,
+                success: function (data) {
+                }
+            });
+        }
+    }
+    win = false;
+    loss = false;
 }
 
 function drawAllCells() {
     var i, j;
+    var sum=0;
     for (i = 0; i < size; i++) {
         for (j = 0; j < size; j++) {
-            drawCell(cells[i][j]);
+            sum+=drawCell(cells[i][j]);
         }
+    }
+    if(sum>0){
+        win=true;
+        finishGame();
     }
 }
 
@@ -168,6 +203,7 @@ function pasteNewCell() {
         }
     }
     if (!countFree) {
+        loss = true;
         finishGame();
         return;
     }

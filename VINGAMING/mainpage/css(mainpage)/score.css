@@ -1,0 +1,47 @@
+.score {
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 75%;
+    width: 20%;
+    display: none;
+    z-index: 1;
+}
+
+.scoreArrow-up {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 15px solid #ECF0F1;
+    left: 10%;
+    margin-left: 65%;
+    top: -10px;
+}
+
+.scoreFormholder {
+    background: #ecf0f1;
+    width: 100%;
+    border-radius: 5px;
+    padding-top: 5px;
+}
+.scoreFormholder label[type="winLabel"], .scoreFormholder label[type="numberOfWin"], .scoreFormholder label[type="looseLabel"], .scoreFormholder label[type="numberOfLoose"] {
+    padding: 7px 5px;
+    margin: 10px 0;
+    width: 96%;
+    display: block;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    -webkit-transition: 0.3s linear;
+    -moz-transition: 0.3s linear;
+    -o-transition: 0.3s linear;
+    transition: 0.3s linear;
+}
+
+.scoreRandompad {
+    padding: 10px;
+}
+
+.scoreGreen {
+    color: #1abc9c;
+}

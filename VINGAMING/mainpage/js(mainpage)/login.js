@@ -1,8 +1,10 @@
 $('input[type="loginSubmit"]').click(function () {
     $(this).css('background', '#2ecc71');
+
 });
 $('input[type="loginSubmit"]').click(function () {
     $(this).css('background', '#1abc9c');
+    $(this).css();
 });
 
 
